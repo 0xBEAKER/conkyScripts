@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 # Author: Paul Beach
 # Script to obtain current internet usage metrics from Mediacom website
-# File is periodically ran via cron job and outputs data to two files
-# (mediacomUsage.txt and mediacomDates.txt) which is scraped by Conky
+# In my setup, this is periodically ran via cron job and outputs data to two 
+# files (mediacomUsage.txt and mediacomDates.txt) which is scraped by Conky
 # Last updated: 30 Sep 15
 
 use WWW::Mechanize;
