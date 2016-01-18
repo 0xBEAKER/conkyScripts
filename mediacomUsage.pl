@@ -17,15 +17,16 @@ my $mech = WWW::Mechanize->new(autocheck => 1); #Launch a WWW::Mech instance
 
 $mech->get("http://mediacomtoday.com/usagemeter"); #Load the usagemeter webpage
 $mech->submit_form(); # The first of many unnecessary redirects
+$mech->click(); #Redirect number 2
 $mech->set_visible($username, $password); # Enter our username and password into the visible form fields
 $mech->click(); # Submit the form
-$mech->click(); # Redirect number 2
-$mech->follow_meta_redirect; # Redirect number 3
-$mech->submit_form(); # Redirect number 4
-$mech->submit_form(); # 5... Are you kidding me?
+$mech->click(); # Redirect number 3
+$mech->follow_meta_redirect; # Redirect number 4
+$mech->submit_form(); # Redirect number 5
+$mech->submit_form(); # 6... Are you kidding me?
 $mech->get("http://www.mediacomtoday.com/usagemeter/usagemeter.php"); # Load an iframe...
-$mech->submit_form(); # 6... for good measure
- 
+$mech->submit_form(); # 7... for good measure
+
 # Parse the usagemeter.php page for the relevant info (usage, dates)
 @values = split(';',$mech->content()); # Split out the data into something I can easily parse
 my @usage = grep /usageCurrentData\.push/,@values; # Find the overall usage
