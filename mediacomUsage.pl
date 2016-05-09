@@ -69,6 +69,7 @@ close $fh;
 exit 0;
 
 # Future stuff to do
+# - Rewrite in Python
 # - Send usage warning emails
 # - Shutdown WAN link if nearing overage
 # - Restart WAN link after new billing cycle
